@@ -1,19 +1,26 @@
 {
-  "name": "mikeflix-client-side",
-  "version": "1.0.0",
-  "description": "client side mikeflix app",
-  "main": "src/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/msemedo2/MikeFlix-client-side.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/msemedo2/MikeFlix-client-side/issues"
-  },
-  "homepage": "https://github.com/msemedo2/MikeFlix-client-side#readme"
+	"name": "mikeflix-client-side",
+	"version": "1.0.0",
+	"description": "client side mikeflix app",
+	"default": "src/index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/msemedo2/MikeFlix-client-side.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/msemedo2/MikeFlix-client-side/issues"
+	},
+	"homepage": "https://github.com/msemedo2/MikeFlix-client-side#readme",
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.0.0-rc.0"
+	}
 }
