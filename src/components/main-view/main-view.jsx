@@ -6,6 +6,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 
+import './main-view.scss';
+
 export class MainView extends React.Component {
 	constructor() {
 		super();
@@ -64,25 +66,31 @@ export class MainView extends React.Component {
 		if (movies.length === 0) return <div className="main-view" />;
 
 		return (
-			<div className="main-view">
-				{selectedMovie ? (
-					<MovieView
-						movie={selectedMovie}
-						onBackClick={(newSelectedMovie) => {
-							this.setSelectedMovie(newSelectedMovie);
-						}}
-					/>
-				) : (
-					movies.map((movie) => (
-						<MovieCard
-							key={movie._id}
-							movie={movie}
-							onMovieClick={(newSelectedMovie) => {
+			<div>
+				<div
+					className={
+						selectedMovie ? 'main-view-container2' : 'main-view-container1'
+					}
+				>
+					{selectedMovie ? (
+						<MovieView
+							movie={selectedMovie}
+							onBackClick={(newSelectedMovie) => {
 								this.setSelectedMovie(newSelectedMovie);
 							}}
 						/>
-					))
-				)}
+					) : (
+						movies.map((movie) => (
+							<MovieCard
+								key={movie._id}
+								movie={movie}
+								onMovieClick={(newSelectedMovie) => {
+									this.setSelectedMovie(newSelectedMovie);
+								}}
+							/>
+						))
+					)}
+				</div>
 			</div>
 		);
 	}
