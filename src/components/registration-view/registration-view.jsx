@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import './registration-view.scss';
+
 export function RegistrationView(props) {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
@@ -16,43 +18,50 @@ export function RegistrationView(props) {
 	};
 
 	return (
-		<form>
-			<label>
-				Username:
-				<input
-					type="text"
-					value={username}
-					onChange={(e) => setUsername(e.target.value)}
-				/>
-			</label>
-			<label>
-				Password:
-				<input
-					type="password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-			</label>
-			<label>
-				Email:
-				<input
-					type="email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-				/>
-			</label>
-			<label>
-				BirthDate:
-				<input
-					type="date"
-					value={birthdate}
-					onChange={(e) => setBirthDate(e.target.value)}
-				/>
-			</label>
-			<button type="submit" onClick={handleSubmit}>
-				Submit
-			</button>
-		</form>
+		<div className="registration-view-container">
+			<h1>Sign Up</h1>
+			<form className="registration-form">
+				<label className="input-container">
+					Username:
+					<input
+						type="text"
+						value={username}
+						onChange={(e) => setUsername(e.target.value)}
+					/>
+				</label>
+				<label className="input-container">
+					Password:
+					<input
+						type="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</label>
+				<label className="input-container">
+					Email:
+					<input
+						type="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+				</label>
+				<label className="input-container">
+					BirthDate:
+					<input
+						type="date"
+						value={birthdate}
+						onChange={(e) => setBirthDate(e.target.value)}
+					/>
+				</label>
+				<button
+					className="registration-button"
+					type="submit"
+					onClick={handleSubmit}
+				>
+					Submit
+				</button>
+			</form>
+		</div>
 	);
 }
 
