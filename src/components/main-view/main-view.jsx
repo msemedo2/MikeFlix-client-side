@@ -1,10 +1,18 @@
 import React from 'react';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import PropTypes from 'prop-types';
 
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { Navbar } from '../navbar/navbar';
+import { GenreView } from '../genre-view/genre-view';
+import { DirectorView } from '../director-view/director-view';
 
 import './main-view.scss';
 
@@ -13,85 +21,100 @@ export class MainView extends React.Component {
 		super();
 		this.state = {
 			movies: [],
-			selectedMovie: null,
 			user: null,
-			registered: null,
+			loggedIn: false,
 		};
 	}
 
 	componentDidMount() {
+		let accessToken = localStorage.getItem('token');
+		if (accessToken !== null) {
+			this.setState({ user: localStorage.getItem('user') });
+			this.getMovies(accessToken);
+			this.setState({ loggedIn: true });
+		}
+	}
+
+	getMovies(token) {
 		axios
-			.get('https://mikeflix2.herokuapp.com/movies')
+			.get('https://mikeflix2.herokuapp.com/movies', {
+				headers: { Authorization: `Bearer ${token}` },
+			})
 			.then((response) => {
 				this.setState({
 					movies: response.data,
 				});
 			})
+
 			.catch((error) => {
 				console.log(error);
 			});
 	}
 
-	setSelectedMovie(newSelectedMovie) {
+	onLoggedIn(authData) {
+		console.log(authData);
 		this.setState({
-			selectedMovie: newSelectedMovie,
+			user: authData.user.Username,
 		});
-	}
 
-	onLoggedIn(user) {
-		this.setState({
-			user,
-		});
-	}
+		this.setState({ loggedIn: true });
 
-	onRegistration(registered) {
-		this.setState({
-			registered,
-		});
+		localStorage.setItem('token', authData.token);
+		localStorage.setItem('user', authData.user.Username);
+		this.getMovies(authData.token);
 	}
 
 	render() {
-		const { movies, selectedMovie, user, registered } = this.state;
-
-		if (!user)
-			return <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-
-		if (!registered)
-			return (
-				<RegistrationView
-					onRegistration={(registered) => this.onRegistration(registered)}
-				/>
-			);
-
-		if (movies.length === 0) return <div className="main-view" />;
+		const { movies, user, loggedIn } = this.state;
 
 		return (
-			<div>
-				<div
-					className={
-						selectedMovie ? 'main-view-container2' : 'main-view-container1'
-					}
-				>
-					{selectedMovie ? (
-						<MovieView
-							movie={selectedMovie}
-							onBackClick={(newSelectedMovie) => {
-								this.setSelectedMovie(newSelectedMovie);
-							}}
-						/>
-					) : (
-						movies.map((movie) => (
-							<MovieCard
-								key={movie._id}
-								movie={movie}
-								onMovieClick={(newSelectedMovie) => {
-									this.setSelectedMovie(newSelectedMovie);
-								}}
-							/>
-						))
-					)}
-				</div>
-			</div>
+			<Router>
+				<Navbar user={user} />
+				<Routes>
+					<Route
+						exact
+						path="/"
+						element={
+							loggedIn ? (
+								<MovieCard movies={movies} />
+							) : (
+								<LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
+							)
+						}
+					/>
+					<Route exact path="/register" element={<RegistrationView />} />
+					<Route
+						path="/movies/:movieId"
+						element={<MovieView movies={movies} />}
+					/>
+					<Route
+						path="/directors/:name"
+						element={<DirectorView movies={movies} />}
+					/>
+					<Route path="/genres/:name" element={<GenreView movies={movies} />} />
+					<Route
+						path={`/users/${user}`}
+						element={<ProfileView movies={movies} user={user} />}
+					/>
+				</Routes>
+			</Router>
 		);
 	}
 }
+
+// MovieCard.propTypes = {
+// 	movie: PropTypes.shape({
+// 		Title: PropTypes.string.isRequired,
+// 		Description: PropTypes.string.isRequired,
+// 		ImagePath: PropTypes.string.isRequired,
+// 		Director: PropTypes.shape({
+// 			Name: PropTypes.string.isRequired,
+// 			Bio: PropTypes.string.isRequired,
+// 			Death: PropTypes.string,
+// 		}),
+// 		Genre: PropTypes.shape({
+// 			Name: PropTypes.string.isRequired,
+// 			Description: PropTypes.string.isRequired,
+// 		}),
+// 	}).isRequired,
+// };
