@@ -15,24 +15,6 @@ a {
   text-decoration: none;
   color: #000;
 }
-.movie-card-view-container .movie-card-view-poster {
-  cursor: pointer;
-  margin-bottom: 40px;
-}
-.movie-card-view-container .movie-card-view-poster .movie-card-view-image {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 20px 20px 0 0;
-}
-.movie-card-view-container .movie-card-view-poster .movie-card-view-title-container {
-  background-color: rgb(41, 41, 41);
-  width: 80%;
-  height: 90px;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
 .movie-view-container {
   max-width: 600px;
   margin: 0 auto;
@@ -202,4 +184,22 @@ a {
 
 
 
+.movie-card-view-container .movie-card-view-poster {
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+.movie-card-view-container .movie-card-view-poster .movie-card-view-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 20px 20px 0 0;
+}
+.movie-card-view-container .movie-card-view-poster .movie-card-view-title-container {
+  background-color: rgb(41, 41, 41);
+  width: 80%;
+  height: 90px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 /*# sourceMappingURL=index.caa67093.css.map */
