@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
-import { MovieCard } from '../movie-card/movie-card';
+import { connect } from 'react-redux';
+import { setMovies } from '../../actions/actions';
+
 import { MovieView } from '../movie-view/movie-view';
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -13,14 +15,14 @@ import { ProfileView } from '../profile-view/profile-view';
 import { Navbar } from '../navbar/navbar';
 import { GenreView } from '../genre-view/genre-view';
 import { DirectorView } from '../director-view/director-view';
+import MoviesList from '../movies-list/movies-list';
 
 import './main-view.scss';
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			movies: [],
 			user: null,
 			loggedIn: false,
 		};
@@ -41,9 +43,7 @@ export class MainView extends React.Component {
 				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((response) => {
-				this.setState({
-					movies: response.data,
-				});
+				this.props.setMovies(response.data);
 			})
 
 			.catch((error) => {
@@ -65,7 +65,8 @@ export class MainView extends React.Component {
 	}
 
 	render() {
-		const { movies, user, loggedIn } = this.state;
+		const { user, loggedIn } = this.state;
+		let { movies } = this.props;
 
 		return (
 			<Router>
@@ -76,7 +77,7 @@ export class MainView extends React.Component {
 						path="/"
 						element={
 							loggedIn ? (
-								<MovieCard movies={movies} />
+								<MoviesList movies={movies} />
 							) : (
 								<LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
 							)
@@ -102,19 +103,8 @@ export class MainView extends React.Component {
 	}
 }
 
-// MovieCard.propTypes = {
-// 	movie: PropTypes.shape({
-// 		Title: PropTypes.string.isRequired,
-// 		Description: PropTypes.string.isRequired,
-// 		ImagePath: PropTypes.string.isRequired,
-// 		Director: PropTypes.shape({
-// 			Name: PropTypes.string.isRequired,
-// 			Bio: PropTypes.string.isRequired,
-// 			Death: PropTypes.string,
-// 		}),
-// 		Genre: PropTypes.shape({
-// 			Name: PropTypes.string.isRequired,
-// 			Description: PropTypes.string.isRequired,
-// 		}),
-// 	}).isRequired,
-// };
+let mapStateToProps = (state) => {
+	return { movies: state.movies };
+};
+
+export default connect(mapStateToProps, { setMovies })(MainView);
