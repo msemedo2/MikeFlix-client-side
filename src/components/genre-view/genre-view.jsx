@@ -41,10 +41,3 @@ export const GenreView = ({ movies }) => {
 		</div>
 	);
 };
-
-// GenreView.propTypes = {
-// 	genre: PropTypes.shape({
-// 		Name: PropTypes.string.isRequired,
-// 		Description: PropTypes.string.isRequired,
-// 	}).isRequired,
-// };
