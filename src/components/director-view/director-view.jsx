@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './director-view.scss';
 
-export const DirectorView = ({ movies, director, onBackClick }) => {
+export const DirectorView = ({ movies }) => {
 	const { name } = useParams();
 	const navigate = useNavigate();
 
@@ -43,12 +43,3 @@ export const DirectorView = ({ movies, director, onBackClick }) => {
 		</div>
 	);
 };
-
-// DirectorView.propTypes = {
-// 	director: PropTypes.shape({
-// 		Name: PropTypes.string.isRequired,
-// 		Bio: PropTypes.string.isRequired,
-// 		Birth: PropTypes.string.isRequired,
-// 		Death: PropTypes.string,
-// 	}).isRequired,
-// };
