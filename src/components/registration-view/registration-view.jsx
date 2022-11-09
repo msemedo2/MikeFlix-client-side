@@ -61,7 +61,6 @@ export function RegistrationView() {
 			<h1>Sign Up</h1>
 			<form className="registration-form">
 				<label className="input-container">
-					Username:
 					<input
 						type="text"
 						value={username}
@@ -72,7 +71,6 @@ export function RegistrationView() {
 					{usernameErr && <p>{usernameErr}</p>}
 				</label>
 				<label className="input-container">
-					Password:
 					<input
 						type="password"
 						value={password}
@@ -93,10 +91,3 @@ export function RegistrationView() {
 		</div>
 	);
 }
-
-// RegistrationView.propTypes = {
-// 	register: PropTypes.shape({
-// 		Username: PropTypes.string.isRequired,
-// 		Password: PropTypes.string.isRequired,
-// 	}),
-// };
