@@ -1,25 +1,41 @@
 .movie-card-view-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	.movie-card-view-poster {
 		cursor: pointer;
-		margin-bottom: 40px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
 		.movie-card-view-image {
-			width: 200px;
-			height: 200px;
+			width: 80%;
+			height: 530px;
 			object-fit: cover;
 			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 				rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
 				rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 			border-radius: 20px 20px 0 0;
+			margin-top: 30px;
 		}
-		.movie-card-view-title-container {
-			background-color: rgba(41, 41, 41);
-			width: 80%;
-			height: 90px;
-			text-align: center;
-			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-				rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-				rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	}
+	.movie-card-view-title-container {
+		background-color: #000000;
+		background-image: url('https://www.transparenttextures.com/patterns/assault.png');
+		width: 80%;
+		height: 90px;
+		text-align: center;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+			rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+			rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		margin-bottom: 50px;
+		border-radius: 0 0 10px 10px;
+		.movie-card-view-title {
+			font-size: 1.4rem;
+			margin: 20px 20px;
 		}
 	}
 }
