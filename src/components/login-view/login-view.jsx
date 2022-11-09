@@ -49,6 +49,7 @@ export function LoginView(props) {
 				})
 				.catch((err) => {
 					console.log(err);
+					alert('User was not found');
 				});
 		}
 	};
@@ -78,7 +79,7 @@ export function LoginView(props) {
 					{passwordErr && <p className="error-message">{passwordErr}</p>}
 				</label>
 				<button className="login-button" type="submit" onClick={handleSubmit}>
-					Submit
+					Login
 				</button>
 			</form>
 		</div>
