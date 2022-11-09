@@ -5,11 +5,13 @@ import { setFilter } from '../../actions/actions';
 
 function VisibilityFilterInput(props) {
 	return (
-		<input
-			onChange={(e) => props.setFilter(e.target.value)}
-			value={props.visibilityFilter}
-			placeholder="Search by movie title:"
-		/>
+		<div className="filter-input-container">
+			<input
+				onChange={(e) => props.setFilter(e.target.value)}
+				value={props.visibilityFilter}
+				placeholder="Search by movie title:"
+			/>
+		</div>
 	);
 }
 
