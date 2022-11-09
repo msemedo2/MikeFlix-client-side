@@ -26,12 +26,28 @@ export function Navbar({ user }) {
 				<h1>MikeFlix</h1>
 			</div>
 			<div className="navbar-links-container">
-				{isAuth() && <Link to="/">Home</Link>}
-				{isAuth() && <Link to={`/users/${user}`}>{user}</Link>}
+				{isAuth() && (
+					<Link className="nav-link" to="/">
+						Home
+					</Link>
+				)}
+				{isAuth() && (
+					<Link className="nav-link" to={`/users/${user}`}>
+						{user}
+					</Link>
+				)}
 
 				{isAuth() && <button onClick={onLoggedOut}>Logout</button>}
-				{!isAuth() && <Link to="/">Sign-in</Link>}
-				{!isAuth() && <Link to="/register">Sign-up</Link>}
+				{!isAuth() && (
+					<Link className="nav-link" to="/">
+						Sign-in
+					</Link>
+				)}
+				{!isAuth() && (
+					<Link className="nav-link" to="/register">
+						Sign-up
+					</Link>
+				)}
 			</div>
 		</div>
 	);

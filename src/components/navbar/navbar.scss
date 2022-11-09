@@ -1,0 +1,60 @@
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: -30px;
+	padding: 0 20px;
+	max-width: 1500px;
+	margin: 0 auto;
+	.navbar-logo {
+		h1 {
+			font-family: 'Bebas Neue', cursive;
+			font-size: 5rem;
+			color: #e50914;
+			text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.8);
+			user-select: none;
+			@media (max-width: 700px) {
+				font-size: 4rem;
+			}
+		}
+	}
+	.navbar-links-container {
+		@media (max-width: 700px) {
+			display: flex;
+			flex-direction: column;
+			line-height: 40px;
+		}
+		.nav-link {
+			text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.8);
+			color: #fff;
+			font-size: 1.75rem;
+			text-transform: uppercase;
+			@media (max-width: 700px) {
+				font-size: 1rem;
+			}
+		}
+		:first-child {
+			margin-right: 30px;
+		}
+		:hover {
+			filter: brightness(60%);
+		}
+		button {
+			text-shadow: 3px 4px 7px rgba(0, 0, 0, 0.8);
+			color: #e50914;
+			outline: none;
+			margin-left: 30px;
+			font-size: 1.25rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+			@media (max-width: 700px) {
+				font-size: 1rem;
+				margin: 10px 0 0 -8px;
+				padding: 0;
+			}
+		}
+	}
+}
