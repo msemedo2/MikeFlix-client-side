@@ -23,11 +23,15 @@ export const GenreView = ({ movies }) => {
 	return (
 		<div className="genre-view-container">
 			{!selectedGenre ? null : (
-				<div>
-					<h3>Genre:</h3>
-					<p>{selectedGenre.Genre.Name}</p>
-					<h3>Description:</h3>
-					<p>{selectedGenre.Genre.Description}</p>
+				<div className="genre-container">
+					<div className="genre">
+						<h3>Genre</h3>
+						<p>{selectedGenre.Genre.Name}</p>
+					</div>
+					<div className="description">
+						<h3>Description</h3>
+						<p>{selectedGenre.Genre.Description}</p>
+					</div>
 					<button
 						className="genre-view-button"
 						onClick={() => {
