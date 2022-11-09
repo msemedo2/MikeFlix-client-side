@@ -14,5 +14,22 @@ body {
 
 a {
 	text-decoration: none;
-	color: #000;
+}
+
+.filter-input-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	input {
+		max-width: 1200px;
+		width: 80%;
+		height: 40px;
+		outline: none;
+		font-size: 1rem;
+		font-family: inherit;
+		background-color: #444444;
+		color: #ffffff;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}
 }

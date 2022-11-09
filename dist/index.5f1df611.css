@@ -16,9 +16,12 @@
 }
 
 .movie-view-container .movie-view-poster .movie-view-info-container {
-  background-color: #292929;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 0 0 10px 10px;
   margin-top: -5px;
-  padding: 20px 0;
+  padding: 20px 0 30px;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
 }
 
 .movie-view-container .movie-view-poster .movie-view-info-container .movie-view-title {
@@ -32,18 +35,46 @@
   margin: 0 20px 10px;
 }
 
-.movie-view-container .movie-view-poster .movie-view-info-container .movie-view-button {
+.movie-view-container .movie-view-poster .movie-view-info-container .movie-view-info-buttons-container {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  display: flex;
+}
+
+.movie-view-container .movie-view-poster .movie-view-info-container .movie-view-info-buttons-container .movie-view-btn {
+  cursor: pointer;
+  color: #fff;
+  background-color: #3c4048;
+  border: none;
+  border-radius: 5px;
+  margin-left: 15px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.movie-view-container .movie-view-poster .movie-view-info-container .movie-view-info-buttons-container .movie-view-back-button {
   width: 10%;
-  height: 35px;
   cursor: pointer;
   color: #fff;
   background-color: #e50914;
   border: none;
   border-radius: 5px;
-  margin-top: 15px;
-  margin-left: 20px;
+  margin-right: 15px;
+  padding: 8px;
+  font-family: inherit;
   font-size: 1rem;
   font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+@media (max-width: 600px) {
+  .movie-view-container .movie-view-poster .movie-view-info-container .movie-view-info-buttons-container .movie-view-back-button {
+    padding-right: 45px;
+  }
 }
 
 * {
@@ -60,80 +91,508 @@ body {
 }
 
 a {
-  color: #000;
   text-decoration: none;
 }
 
-.main-view-container1 {
-  max-width: 1500px;
+.filter-input-container {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.filter-input-container input {
+  max-width: 1200px;
+  width: 80%;
+  height: 40px;
+  color: #fff;
+  background-color: #444;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+
+
+.movie-list-container {
+  max-width: 1250px;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
   margin: 0 auto;
   display: grid;
 }
 
-@media (max-width: 1300px) {
-  .main-view-container1 {
+@media (max-width: 1200px) {
+  .movie-list-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 800px) {
-  .main-view-container1 {
+@media (max-width: 600px) {
+  .movie-list-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-.main-view-container1 .movie-card-view-poster {
+.movie-card-view-container {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-.main-view-container1 .movie-card-view-poster .movie-card-view-image {
-  width: 80%;
-  min-width: 300px;
-}
-
-.main-view-container2 {
+.movie-card-view-container .movie-card-view-poster {
+  cursor: pointer;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   display: flex;
 }
 
-.movie-card-view-container .movie-card-view-poster {
-  cursor: pointer;
-  margin-bottom: 40px;
-}
-
 .movie-card-view-container .movie-card-view-poster .movie-card-view-image {
-  width: 200px;
-  height: 200px;
+  width: 80%;
+  height: 530px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
+  margin-top: 30px;
   box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
 }
 
-.movie-card-view-container .movie-card-view-poster .movie-card-view-title-container {
+.movie-card-view-container .movie-card-view-title-container {
   width: 80%;
   height: 90px;
   text-align: center;
-  background-color: #292929;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 50px;
   box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
 }
 
+.movie-card-view-container .movie-card-view-title-container .movie-card-view-title {
+  margin: 20px;
+  font-size: 1.4rem;
+}
 
+.director-view-container {
+  max-width: 1100px;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
 
+@media (max-width: 1200px) {
+  .director-view-container {
+    margin: 0 5%;
+  }
+}
 
+.director-view-container .director-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
+.director-view-container .director-container h3 {
+  margin: 25px 0 0;
+  font-size: 1.8rem;
+}
 
+.director-view-container .director-container p {
+  margin: 25px 0 0;
+  font-size: 1.2rem;
+}
 
+.director-view-container .bio-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
+.director-view-container .bio-container h3 {
+  margin: 30px 0 0;
+  font-size: 1.8rem;
+}
+
+.director-view-container .bio-container p {
+  margin: 25px 50px 0;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+.director-view-container .birth-container {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+.director-view-container .birth-container .birth h3 {
+  margin: 30px 0 0;
+  font-size: 1.8rem;
+}
+
+.director-view-container .birth-container .birth p {
+  margin: 10px 50px 0;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+.director-view-container .birth-container .death h3 {
+  margin: 30px 0 0;
+  font-size: 1.8rem;
+}
+
+.director-view-container .birth-container .death p {
+  margin: 10px 50px 0;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+.director-view-container .director-view-button {
+  width: 5%;
+  float: right;
+  cursor: pointer;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right: 40px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+@media (max-width: 600px) {
+  .director-view-container .director-view-button {
+    padding-right: 50px;
+  }
+}
+
+.genre-view-container {
+  max-width: 1100px;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 20px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1200px) {
+  .genre-view-container {
+    margin: 0 5%;
+  }
+}
+
+.genre-view-container .genre {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.genre-view-container .genre h3 {
+  margin: 25px 0 0;
+  font-size: 1.8rem;
+}
+
+.genre-view-container .genre p {
+  margin: 25px 0 0;
+  font-size: 1.2rem;
+}
+
+.genre-view-container .description {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.genre-view-container .description h3 {
+  margin: 30px 0 0;
+  font-size: 1.8rem;
+}
+
+.genre-view-container .description p {
+  margin: 25px 50px 0;
+  font-size: 1.1rem;
+  line-height: 1.7rem;
+}
+
+.genre-view-container .genre-view-button {
+  width: 5%;
+  float: right;
+  cursor: pointer;
+  color: #fff;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right: 40px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.genre-view-container .genre-view-button :hover {
+  filter: brightness(80%);
+}
+
+.navbar-container {
+  max-width: 1500px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+}
+
+.navbar-container .navbar-logo h1 {
+  color: #e50914;
+  text-shadow: 3px 4px 7px #000c;
+  -webkit-user-select: none;
+  user-select: none;
+  font-family: Bebas Neue, cursive;
+  font-size: 5rem;
+}
+
+@media (max-width: 700px) {
+  .navbar-container .navbar-logo h1 {
+    font-size: 4rem;
+  }
+
+  .navbar-container .navbar-links-container {
+    flex-direction: column;
+    line-height: 40px;
+    display: flex;
+  }
+}
+
+.navbar-container .navbar-links-container .nav-link {
+  text-shadow: 3px 4px 7px #000c;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+}
+
+@media (max-width: 700px) {
+  .navbar-container .navbar-links-container .nav-link {
+    font-size: 1rem;
+  }
+}
+
+.navbar-container .navbar-links-container :first-child {
+  margin-right: 30px;
+}
+
+.navbar-container .navbar-links-container :hover {
+  filter: brightness(60%);
+}
+
+.navbar-container .navbar-links-container button {
+  text-shadow: 3px 4px 7px #000c;
+  color: #e50914;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #0000;
+  border: none;
+  outline: none;
+  margin-left: 30px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .navbar-container .navbar-links-container button {
+    margin: 10px 0 0 -8px;
+    padding: 0;
+    font-size: 1rem;
+  }
+}
+
+.profile-container {
+  max-width: 1100px;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 20px;
+  margin: 0 auto 50px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 1200px) {
+  .profile-container {
+    margin: 0 5%;
+  }
+}
+
+.profile-container h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.profile-container .form-container {
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+}
+
+.profile-container .form-container input {
+  width: 80%;
+  height: 40px;
+  color: #fff;
+  background-color: #444;
+  border-radius: 5px;
+  outline: none;
+  margin: 0 0 30px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.profile-container .form-container button {
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.profile-container .form-container .update-button {
+  background-color: #3c4048;
+}
+
+.profile-container .form-container .delete-button {
+  background-color: #e50914;
+}
+
+.profile-container .movie-container {
+  max-width: 1250px;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+}
+
+@media (max-width: 1200px) {
+  .profile-container .movie-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-container .movie-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.profile-container .movie-container .favs-container {
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.profile-container .movie-container .fav-img {
+  width: 70%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  margin-top: 30px;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.profile-container .movie-container .title-container {
+  width: 100%;
+}
+
+.profile-container .movie-container .title-container .info {
+  width: 70%;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
+  border-radius: 0 0 10px 10px;
+  margin: -20px auto;
+  padding: 20px 0 50px;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.profile-container .movie-container .title-container .info p {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.profile-container .movie-container .title-container .info .remove-button {
+  cursor: pointer;
+  color: #fff;
+  float: right;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  margin: 15px 15px 20px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+.profile-container .back-btn {
+  width: 5%;
+  cursor: pointer;
+  color: #fff;
+  float: right;
+  background-color: #e50914;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 20px 0 0;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
+}
+
+@media (max-width: 600px) {
+  .profile-container .back-btn {
+    padding-right: 50px;
+  }
+}
 
 .registration-view-container {
   max-width: 1100px;
-  background-color: #292929e6;
+  min-height: 400px;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
   border-radius: 20px;
   margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .registration-view-container {
+    margin: 0 5%;
+  }
 }
 
 .registration-view-container h1 {
@@ -158,11 +617,12 @@ a {
 .registration-view-container .registration-form .input-container input {
   width: 100%;
   height: 35px;
+  height: 40px;
   color: #fff;
   background-color: #444;
   border-radius: 5px;
   outline: none;
-  margin: 5px 0 20px;
+  margin: 5px 0 40px;
   font-family: inherit;
   font-size: 1rem;
 }
@@ -182,9 +642,17 @@ a {
 
 .login-view-container {
   max-width: 1100px;
-  background-color: #292929e6;
+  min-height: 400px;
+  background-color: #000;
+  background-image: url("https://www.transparenttextures.com/patterns/assault.png");
   border-radius: 20px;
   margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .login-view-container {
+    margin: 0 5%;
+  }
 }
 
 .login-view-container h1 {
@@ -208,12 +676,12 @@ a {
 
 .login-view-container .login-form .input-container input {
   width: 100%;
-  height: 35px;
+  height: 40px;
   color: #fff;
   background-color: #444;
   border-radius: 5px;
   outline: none;
-  margin: 5px 0 20px;
+  margin: 5px 0 40px;
   font-family: inherit;
   font-size: 1rem;
 }
