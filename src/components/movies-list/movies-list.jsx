@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { MovieCard } from '../movie-card/movie-card';
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
+import './movies-list.scss';
+
 const mapStateToProps = (state) => {
 	const { visibilityFilter } = state;
 	return { visibilityFilter };
@@ -24,9 +26,11 @@ function MoviesList(props) {
 	return (
 		<>
 			<VisibilityFilterInput visibilityFilter={visibilityFilter} />
-			{filteredMovies.map((movie, i) => (
-				<MovieCard key={i} movies={movie} />
-			))}
+			<div className="movie-list-container">
+				{filteredMovies.map((movie, i) => (
+					<MovieCard key={i} movies={movie} />
+				))}
+			</div>
 		</>
 	);
 }
