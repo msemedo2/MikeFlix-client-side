@@ -66,36 +66,33 @@ export const MovieView = ({ user, movies }) => {
 								<span className="label"></span>
 								<span className="value">{selectedMovie.Description}</span>
 							</div>
-							<div>
-								<Link to={`/directors/${selectedMovie.Director.Name}`}>
-									<button>Director</button>
-								</Link>
-								<Link to={`/genres/${selectedMovie.Genre.Name}`}>
-									<button>Genre</button>
-								</Link>
+							<div className="movie-view-info-buttons-container">
+								<div className="movie-view-info-buttons">
+									<Link to={`/directors/${selectedMovie.Director.Name}`}>
+										<button className="movie-view-btn">Director</button>
+									</Link>
+									<Link to={`/genres/${selectedMovie.Genre.Name}`}>
+										<button className="movie-view-btn">Genre</button>
+									</Link>
+
+									<button
+										className="movie-view-btn"
+										onClick={() => {
+											addToFavs(movies, user);
+										}}
+									>
+										Add to favorites
+									</button>
+								</div>
+								<button
+									className="movie-view-back-button"
+									onClick={() => {
+										navigate(-1);
+									}}
+								>
+									Back
+								</button>
 							</div>
-							<button
-								className="movie-view-button"
-								onClick={() => {
-									navigate(-1);
-								}}
-							>
-								Back
-							</button>
-							<button
-								onClick={() => {
-									addToFavs(movies, user);
-								}}
-							>
-								Add to favorites
-							</button>
-							{/* <button
-								onClick={() => {
-									addToFavs(movie, user);
-								}}
-							>
-								Remove from favorites
-							</button> */}
 						</div>
 					</div>
 				</div>
