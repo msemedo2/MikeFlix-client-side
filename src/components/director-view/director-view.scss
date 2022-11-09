@@ -1,0 +1,90 @@
+.director-view-container {
+	background-color: #000000;
+	background-image: url('https://www.transparenttextures.com/patterns/assault.png');
+	border-radius: 20px;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding-bottom: 80px;
+	@media (max-width: 1200px) {
+		margin: 0 5%;
+	}
+	.director-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h3 {
+			font-size: 1.8rem;
+			margin: 25px 0 0;
+		}
+		p {
+			font-size: 1.2rem;
+			margin: 25px 0 0;
+		}
+	}
+	.bio-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		h3 {
+			font-size: 1.8rem;
+			margin: 30px 0 0;
+		}
+		p {
+			font-size: 1.1rem;
+			margin: 25px 50px 0;
+			line-height: 1.7rem;
+		}
+	}
+	.birth-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin-top: 20px;
+		.birth {
+			h3 {
+				font-size: 1.8rem;
+				margin: 30px 0 0;
+			}
+			p {
+				font-size: 1.1rem;
+				margin: 10px 50px 0;
+				line-height: 1.7rem;
+			}
+		}
+		.death {
+			h3 {
+				font-size: 1.8rem;
+				margin: 30px 0 0;
+			}
+			p {
+				font-size: 1.1rem;
+				margin: 10px 50px 0;
+				line-height: 1.7rem;
+			}
+		}
+	}
+	.director-view-button {
+		width: 5%;
+		float: right;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 700;
+		border-radius: 5px;
+		border: none;
+		color: #ffffff;
+		background-color: #e50914;
+		margin-right: 40px;
+		margin-top: 15px;
+		font-family: inherit;
+		padding: 8px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+			rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+			rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		@media (max-width: 600px) {
+			padding-right: 50px;
+		}
+	}
+}

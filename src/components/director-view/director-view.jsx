@@ -24,14 +24,26 @@ export const DirectorView = ({ movies }) => {
 		<div className="director-view-container">
 			{!selectedDirector ? null : (
 				<div>
-					<h3>Director:</h3>
-					<p>{selectedDirector.Director.Name}</p>
-					<h3>Bio:</h3>
-					<p>{selectedDirector.Director.Bio}</p>
-					<h3>Death:</h3>
-					<p>{selectedDirector.Director.Death}</p>
+					<div className="director-container">
+						<h3>Director</h3>
+						<p>{selectedDirector.Director.Name}</p>
+					</div>
+					<div className="bio-container">
+						<h3>Bio</h3>
+						<p>{selectedDirector.Director.Bio}</p>
+					</div>
+					<div className="birth-container">
+						<div className="birth">
+							<h3>Birth</h3>
+							<p>{selectedDirector.Director.Birth}</p>
+						</div>
+						<div className="death">
+							<h3>Death</h3>
+							<p>{selectedDirector.Director.Death}</p>
+						</div>
+					</div>
 					<button
-						className="genre-view-button"
+						className="director-view-button"
 						onClick={() => {
 							navigate(-1);
 						}}
