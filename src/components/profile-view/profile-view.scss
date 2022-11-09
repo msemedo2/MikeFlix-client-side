@@ -1,0 +1,142 @@
+.profile-container {
+	background-color: #000000;
+	background-image: url('https://www.transparenttextures.com/patterns/assault.png');
+	border-radius: 20px;
+	max-width: 1100px;
+	margin: 0 auto;
+	margin-bottom: 50px;
+	padding-bottom: 80px;
+	@media (max-width: 1200px) {
+		margin: 0 5%;
+	}
+	h1 {
+		text-align: center;
+		padding-top: 20px;
+	}
+	h2 {
+		text-align: center;
+		padding-top: 20px;
+		margin-bottom: 30px;
+	}
+	.form-container {
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+		input {
+			width: 80%;
+			margin: 0px 0px 30px;
+			height: 40px;
+			outline: none;
+			font-size: 1rem;
+			font-family: inherit;
+			background-color: #444444;
+			color: #ffffff;
+			border-radius: 5px;
+		}
+		button {
+			cursor: pointer;
+			font-size: 1rem;
+			font-weight: 700;
+			border-radius: 5px;
+			border: none;
+			color: #ffffff;
+			font-family: inherit;
+			padding: 8px;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+				rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+				rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		}
+		.update-button {
+			background-color: #3c4048;
+		}
+		.delete-button {
+			background-color: #e50914;
+		}
+	}
+	.movie-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 1250px;
+		@media (max-width: 1200px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (max-width: 600px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+		.favs-container {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+		}
+		.fav-img {
+			width: 70%;
+			height: 400px;
+			object-fit: cover;
+			box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+				rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+				rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+			border-radius: 20px 20px 0 0;
+			margin-top: 30px;
+		}
+		.title-container {
+			width: 100%;
+			.info {
+				background-color: #000000;
+				background-image: url('https://www.transparenttextures.com/patterns/assault.png');
+				box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+					rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+					rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+				border-radius: 0px 0px 10px 10px;
+				width: 70%;
+				margin: -20px auto;
+				padding: 20px 0px 50px 0;
+				p {
+					text-align: center;
+					color: #fff;
+					font-weight: 700;
+					font-size: 1.2rem;
+				}
+				.remove-button {
+					cursor: pointer;
+					font-size: 1rem;
+					font-weight: 700;
+					border-radius: 5px;
+					border: none;
+					color: #ffffff;
+					font-family: inherit;
+					float: right;
+					margin: 15px 15px 20px 0;
+					box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+						rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+						rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+					background-color: #e50914;
+				}
+			}
+		}
+	}
+	.back-btn {
+		width: 5%;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: 700;
+		border-radius: 5px;
+		border: none;
+		color: #ffffff;
+		background-color: #e50914;
+		float: right;
+		margin: 20px 20px 0px 0;
+		font-family: inherit;
+		padding: 8px;
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+			rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+			rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+		@media (max-width: 600px) {
+			padding-right: 50px;
+		}
+	}
+}

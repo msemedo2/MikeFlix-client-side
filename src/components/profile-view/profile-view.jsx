@@ -49,7 +49,6 @@ export class ProfileView extends React.Component {
 	};
 
 	editUser = (e) => {
-		e.preventDefault();
 		const user = localStorage.getItem('user');
 		const token = localStorage.getItem('token');
 		axios
@@ -74,7 +73,7 @@ export class ProfileView extends React.Component {
 				console.log(data);
 				console.log(this.state.Username);
 				alert('Profile is updated!');
-				window.open('/', '_self');
+				window.open('/');
 			})
 			.catch(function (error) {
 				console.log(error);
@@ -141,100 +140,84 @@ export class ProfileView extends React.Component {
 		const { FavoriteMovies, Username } = this.state;
 
 		return (
-			<div>
-				<div>
-					<h1>USER PROFILE</h1>
-				</div>
-				<div
-					className="update-inputs mt-4 mb-5 bg-dark text-white"
-					style={{ borderRadius: '20px' }}
+			<div className="profile-container">
+				<h1>User Profile</h1>
+				<h2>Update Profile</h2>
+				<form
+					className="form-container"
+					onSubmit={(e) => this.editUser(e, this.Username, this.Password)}
 				>
-					<h1>UPDATE PROFILE</h1>
-					<div>
-						<div>
-							<form
-								onSubmit={(e) => this.editUser(e, this.Username, this.Password)}
-							>
-								<label>New Username</label>
-								<input
-									type="text"
-									name="username"
-									className="bg-dark"
-									placeholder="New Username"
-									onChange={(e) => this.setUsername(e.target.value)}
-									required
-								/>
-								<label>New Password</label>
-								<input
-									type="password"
-									name="password"
-									className="bg-dark"
-									placeholder="New Password"
-									onChange={(e) => this.setPassword(e.target.value)}
-									required
-								/>
-
-								<div className="mb-4">
-									<button type="submit" onClick={() => this.editUser()}>
-										Update User
-									</button>
-									<button
-										className="delete-button"
-										onClick={() => this.onDeleteUser()}
-									>
-										Delete User
-									</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-				<div className="bg-dark text-white">
-					<div>
-						<h4>Favorite Movies</h4>
-					</div>
-					<div>
-						{FavoriteMovies.length === 0 && <div>No Favorite Movies</div>}
-						{FavoriteMovies.length > 0 &&
-							movies.map((movie) => {
-								if (
-									movie._id === FavoriteMovies.find((fav) => fav === movie._id)
-								) {
-									return (
-										<div key={movie._id} md={4}>
-											<Link to={`/movies/${movie._id}`}>
+					<input
+						type="text"
+						name="username"
+						placeholder="New Username"
+						onChange={(e) => this.setUsername(e.target.value)}
+						required
+					/>
+					<input
+						type="password"
+						name="password"
+						placeholder="New Password"
+						onChange={(e) => this.setPassword(e.target.value)}
+						required
+					/>
+					<button
+						className="update-button"
+						type="submit"
+						onClick={() => this.editUser()}
+					>
+						Update User
+					</button>
+					<h2>Delete Profile</h2>
+					<button className="delete-button" onClick={() => this.onDeleteUser()}>
+						Delete User
+					</button>
+				</form>
+				<h2>Favorite Movies</h2>
+				<div className="movie-container">
+					{FavoriteMovies.length === 0 && <div>No Favorite Movies</div>}
+					{FavoriteMovies.length > 0 &&
+						movies.map((movie) => {
+							if (
+								movie._id === FavoriteMovies.find((fav) => fav === movie._id)
+							) {
+								return (
+									<div key={movie._id}>
+										<Link to={`/movies/${movie._id}`}>
+											<div className="favs-container">
 												<img
-													className="card-img"
+													className="fav-img"
 													src={movie.ImagePath}
 													crossOrigin="anonymous"
 													alt={movie.Title}
 												/>
-												<p className="text-white">{movie.Title}</p>
-											</Link>
-											<button
-												className="mt-3"
-												value={movie._id}
-												variant="secondary"
-												onClick={() => this.onRemoveFavorite(movie)}
-											>
-												Remove
-											</button>
+											</div>
+										</Link>
+										<div className="title-container">
+											<div className="info">
+												<p className="">{movie.Title}</p>
+												<button
+													className="remove-button"
+													value={movie._id}
+													onClick={() => this.onRemoveFavorite(movie)}
+												>
+													Remove
+												</button>
+											</div>
 										</div>
-									);
-								}
-							})}
-						<div>
-							<button
-								style={{ float: 'left' }}
-								onClick={() => {
-									onBackClick(null);
-								}}
-							>
-								Back
-							</button>
-						</div>
-					</div>
+									</div>
+								);
+							}
+						})}
 				</div>
+				<button
+					className="back-btn"
+					onClick={() => {
+						onBackClick(null);
+					}}
+				>
+					Back
+				</button>
 			</div>
 		);
 	}
