@@ -39535,16 +39535,13 @@ class MovieCard extends (0, _reactDefault.default).Component {
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: `/movies/${movies._id}`,
                             className: "movie-card-view-poster",
-                            onClick: ()=>{
-                                onMovieClick(movie);
-                            },
                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "movie-card-view-image",
                                 src: movies.ImagePath,
                                 crossOrigin: "anonymous"
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 23,
+                                lineNumber: 20,
                                 columnNumber: 8
                             }, this)
                         }, void 0, false, {
@@ -39559,12 +39556,12 @@ class MovieCard extends (0, _reactDefault.default).Component {
                                 children: movies.Title
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 30,
+                                lineNumber: 28,
                                 columnNumber: 8
                             }, this)
                         }, void 0, false, {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 29,
+                            lineNumber: 27,
                             columnNumber: 7
                         }, this)
                     ]

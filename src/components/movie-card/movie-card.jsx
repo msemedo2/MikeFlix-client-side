@@ -16,9 +16,6 @@ export class MovieCard extends React.Component {
 						<Link
 							to={`/movies/${movies._id}`}
 							className="movie-card-view-poster"
-							onClick={() => {
-								onMovieClick(movie);
-							}}
 						>
 							<img
 								className="movie-card-view-image"
@@ -26,6 +23,7 @@ export class MovieCard extends React.Component {
 								crossOrigin="anonymous"
 							/>
 						</Link>
+
 						<div className="movie-card-view-title-container">
 							<h2 className="movie-card-view-title">{movies.Title}</h2>
 						</div>
