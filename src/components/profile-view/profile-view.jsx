@@ -70,8 +70,6 @@ export class ProfileView extends React.Component {
 
 				localStorage.setItem('user', this.state.Username);
 				const data = response.data;
-				console.log(data);
-				console.log(this.state.Username);
 				alert('Profile is updated!');
 				window.open('/');
 			})
@@ -92,7 +90,6 @@ export class ProfileView extends React.Component {
 				}
 			)
 			.then((response) => {
-				console.log(response);
 				alert('Movie removed from Favorite Movies!');
 				this.componentDidMount();
 			})
@@ -110,7 +107,6 @@ export class ProfileView extends React.Component {
 				headers: { Authorization: `Bearer ${token}` },
 			})
 			.then((response) => {
-				console.log(response);
 				alert('Profile has been deleted');
 				localStorage.removeItem('user');
 				localStorage.removeItem('token');

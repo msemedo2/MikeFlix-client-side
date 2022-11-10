@@ -26,8 +26,6 @@ export const MovieView = ({ user, movies }) => {
 	function addToFavs(movies, user) {
 		let username = localStorage.getItem('user');
 		let token = localStorage.getItem('token');
-		console.log(movies);
-		console.log(token);
 		selectedMovie = movies.find((movie) => movie._id === movieId);
 
 		axios
@@ -37,7 +35,6 @@ export const MovieView = ({ user, movies }) => {
 				{ headers: { Authorization: `Bearer ${token}` } }
 			)
 			.then((response) => {
-				console.log(response.data);
 				alert(`${selectedMovie.Title} has been added from your list.`);
 			})
 			.catch(function (err) {
