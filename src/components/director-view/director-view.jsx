@@ -9,7 +9,7 @@ export const DirectorView = ({ movies }) => {
 	const { name } = useParams();
 	const navigate = useNavigate();
 
-	selectedDirector = {};
+	let selectedDirector = {};
 
 	function waitingForMovies() {
 		if (!selectedDirector) {
