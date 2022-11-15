@@ -9,7 +9,7 @@ export const GenreView = ({ movies }) => {
 	const { name } = useParams();
 	const navigate = useNavigate();
 
-	selectedGenre = {};
+	let selectedGenre = {};
 
 	function waitingForMovies() {
 		if (!selectedGenre) {
