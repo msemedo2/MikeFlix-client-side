@@ -39161,7 +39161,7 @@ const GenreView = ({ movies  })=>{
     _s();
     const { name  } = (0, _reactRouterDom.useParams)();
     const navigate = (0, _reactRouterDom.useNavigate)();
-    selectedGenre = {};
+    let selectedGenre = {};
     function waitingForMovies() {
         if (!selectedGenre) waitingForMovies();
         else selectedGenre = movies.find((movie)=>movie.Genre.Name === name);
