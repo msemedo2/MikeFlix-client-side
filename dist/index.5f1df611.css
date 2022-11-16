@@ -272,7 +272,7 @@ a {
   box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .director-view-container .director-view-button {
     padding-right: 50px;
   }
@@ -345,7 +345,7 @@ a {
   box-shadow: 0 54px 55px #00000040, 0 -12px 30px #0000001f, 0 4px 6px #0000001f, 0 12px 13px #0000002b, 0 -3px 5px #00000017;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .genre-view-container .genre-view-button {
     padding-right: 50px;
   }
