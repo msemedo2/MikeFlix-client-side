@@ -38607,9 +38607,7 @@ function RegistrationView() {
             alert("Registration successful, please login!");
             window.open("/", "_self");
         }).catch((err)=>{
-            console.log(err.response.data);
-            console.log(err.response.status);
-            console.log(err.response.headers);
+            console.log(err);
             alert("unable to register");
         });
     };
@@ -38620,7 +38618,7 @@ function RegistrationView() {
                 children: "Sign Up"
             }, void 0, false, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 61,
+                lineNumber: 59,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
@@ -38637,20 +38635,20 @@ function RegistrationView() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 64,
+                                lineNumber: 62,
                                 columnNumber: 6
                             }, this),
                             usernameErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: usernameErr
                             }, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 71,
+                                lineNumber: 69,
                                 columnNumber: 22
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 63,
+                        lineNumber: 61,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -38664,20 +38662,20 @@ function RegistrationView() {
                                 required: true
                             }, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 74,
+                                lineNumber: 72,
                                 columnNumber: 6
                             }, this),
                             passwordErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                 children: passwordErr
                             }, void 0, false, {
                                 fileName: "src/components/registration-view/registration-view.jsx",
-                                lineNumber: 81,
+                                lineNumber: 79,
                                 columnNumber: 22
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 73,
+                        lineNumber: 71,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -38687,19 +38685,19 @@ function RegistrationView() {
                         children: "Register"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 83,
+                        lineNumber: 81,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 62,
+                lineNumber: 60,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 60,
+        lineNumber: 58,
         columnNumber: 3
     }, this);
 }

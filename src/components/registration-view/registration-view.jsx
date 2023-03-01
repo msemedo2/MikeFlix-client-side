@@ -48,9 +48,7 @@ export function RegistrationView() {
 					window.open('/', '_self');
 				})
 				.catch((err) => {
-					console.log(err.response.data);
-					console.log(err.response.status);
-					console.log(err.response.headers);
+					console.log(err);
 					alert('unable to register');
 				});
 		}
